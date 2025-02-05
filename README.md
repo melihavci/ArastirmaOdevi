@@ -478,6 +478,7 @@ Yanıt olarak frontend'e genellikle JSON veya XML formatında veri döner.
 #Backend’den gelen yanıt frontend tarafından işlenir.
 Kullanıcıya bir bildirim gösterilir veya ekran güncellenir.
 Backend ile Frontend İletişim Yöntemleri
+
 ##🟢 RESTful API
 Backend ile frontend arasındaki en yaygın iletişim yöntemidir.
 JSON veya XML formatında veri iletilir.
