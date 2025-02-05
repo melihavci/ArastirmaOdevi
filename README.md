@@ -429,3 +429,66 @@ paths:
 - [Swagger vs. Postman - Hangisi Ne İçin Kullanılmalı?](https://blog.postman.com/swagger-vs-postman/)  
   Swagger ve Postman arasındaki farkları açıklayan bir yazı.
 
+# Backend Nedir, Frontend ile Nasıl İletişim Kurar?
+
+## Backend Nedir?
+Backend, bir uygulamanın arka planda çalışan, kullanıcı tarafından doğrudan görülmeyen kısmıdır.  
+Genellikle aşağıdaki bileşenlerden oluşur:
+
+- **Sunucu (Server):** Gelen istekleri işler ve uygun yanıtları döner.
+- **Veritabanı (Database):** Verileri saklar ve yönetir.
+- **Uygulama Mantığı:** İş kurallarını ve veri işleme süreçlerini yönetir.
+- **API (Application Programming Interface):** Backend ile frontend arasındaki iletişimi sağlar.
+
+Backend, web ve mobil uygulamalarda **Python (Django, Flask), JavaScript (Node.js), PHP, Java (Spring), C# (.NET)** gibi dillerle geliştirilir.
+
+---
+
+## Backend ve Frontend Nasıl İletişim Kurar?
+Frontend (kullanıcının gördüğü arayüz) ve backend (verilerin işlendiği kısım) **API’ler** aracılığıyla iletişim kurar.  
+
+### 1. **Frontend’den Backend’e İstek (Request) Gönderme**
+- Kullanıcı, frontend üzerinden bir işlem yapar (örneğin, form doldurup gönderir).
+- Bu işlem, HTTP istekleri aracılığıyla backend'e iletilir.
+- HTTP Yöntemleri:
+  - `GET` → Veri çekme
+  - `POST` → Veri gönderme
+  - `PUT` → Veri güncelleme
+  - `DELETE` → Veri silme
+
+**Örnek İstek (Request) - Kullanıcı Kaydetme:**
+```json
+{
+  "name": "Jane Doe",
+  "email": "jane.doe@example.com"
+}
+```
+Backend İsteği İşler ve Yanıt (Response) Döner
+Backend, gelen isteği işler (veriyi işler, doğrulama yapar, veritabanına kaydeder vb.).
+Yanıt olarak frontend'e genellikle JSON veya XML formatında veri döner.
+Örnek Yanıt (Response):
+```json
+{
+  "status": "success",
+  "message": "Kullanıcı başarıyla kaydedildi."
+}
+ Frontend Yanıtı Kullanıcıya Gösterir
+```
+
+#Backend’den gelen yanıt frontend tarafından işlenir.
+Kullanıcıya bir bildirim gösterilir veya ekran güncellenir.
+Backend ile Frontend İletişim Yöntemleri
+##🟢 RESTful API
+Backend ile frontend arasındaki en yaygın iletişim yöntemidir.
+JSON veya XML formatında veri iletilir.
+HTTP protokolü kullanılarak çalışır.
+
+##🔵 GraphQL
+Daha esnek ve optimize veri sorgulama sağlar.
+İstemci, sadece ihtiyacı olan veriyi çekebilir.
+Tek bir endpoint üzerinden çalışır.
+
+##🟠 WebSocket
+Gerçek zamanlı veri iletişimi sağlar.
+Sohbet uygulamaları, canlı skorlar ve bildirimler için kullanılır.
+Sürekli açık bağlantı ile çift yönlü veri aktarımı yapar.
